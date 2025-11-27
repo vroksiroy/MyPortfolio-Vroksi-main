@@ -1,13 +1,14 @@
 export const Bio = {
   name: "Vroksi Roy",
   roles: [
-    "Mobile App Engineer",
-    "Full Stack Developer"
+    "Senior React Native Developer",
+    "Mobile App Architect",
+    "Cross-Platform Expert"
   ],
   description:
-    "I'm a Engineering manager who genuinely enjoys solving complex problems and thinking through systems logically. I’ve always been drawn to distributed systems and love playing around with HLD and LLD it’s the part of the job I find most exciting. I work across the full stack but naturally lean toward mobile app design, building clean architectures, and making sure things run fast and smooth.",
+    "Passionate mobile application developer with 7 years of experience crafting high-performance iOS and Android apps. Specialized in React Native development with deep expertise in Flutter, native iOS (Swift), and Android (Kotlin). I thrive on building scalable mobile architectures, optimizing app performance, and delivering seamless user experiences across platforms.",
   github: "https://github.com/vroksiroy",
-  resume: "https://drive.google.com/file/d/19b-odyjUaWhzTYN8_R8dhuoYDMpN5-9Y/view?usp=sharing",
+  resume: "https://drive.google.com/file/d/1Ac433qEUusO2OzAsPD3crhW_oBPxLW7L/view?usp=sharing",
   linkedin: "https://www.linkedin.com/in/vroksiroy/",
   twitter: "",
   insta: "",
@@ -16,42 +17,62 @@ export const Bio = {
 
 export const skills = [
   {
-    title: "Backend",
+    title: "Mobile Development",
     skills: [
       {
-        name: "Microservices",
+        name: "React Native",
         image:
-          "https://t4.ftcdn.net/jpg/03/85/29/69/360_F_385296927_b9V4skbl94TzxL8AiVAMGdpp9hFeZat0.jpg",
+          "https://www.datocms-assets.com/45470/1631026680-logo-react-native.png"
       },
       {
-        name: "MySQL",
+        name: "Flutter",
         image:
-          "https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original-wordmark.svg",
+          "https://cdn.icon-icons.com/icons2/2107/PNG/512/file_type_flutter_icon_130599.png"
       },
       {
-        name: "PostgreSQL",
+        name: "iOS (Swift)",
         image:
-          "https://raw.githubusercontent.com/devicons/devicon/master/icons/postgresql/postgresql-original-wordmark.svg",
+          "https://developer.apple.com/swift/images/swift-og.png",
       },
       {
-        name: "Apache Kafka",
+        name: "Android (Kotlin)",
         image:
-          "https://w1.pngwing.com/pngs/489/830/png-transparent-linkedin-logo-big-data-user-profile-microsoft-access-apache-kafka-computer-management-apache-spark-thumbnail.png",
-      },    
+          "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAMAAABF0y+mAAAAWlBMVEVHcExatmAyikU9lEpJpFdTr1tVsl1PrlRIolRQrFowiUFYtFxWs1tGnVNPr1NZtl9Vs1pRsVZduWRivWhMp1ZUr14GBAZHoVNBlEsvOzBBmksvZjE9jkY+fUJA+EjFAAAADnRSTlMAv9i+Zp1xMBW0NFHkj7ECPhsAAADQSURBVCiRzdDdEoIgEAVgTNToh11wF9Tq/V+zpRiCmu49V8inu2dUapc5fV9Mn2O/XVu7xkM5HzY61naMywdPC3U1mnivFvWEZ1mkx1HLtglj38xxF+PwHXNxsdkyIOR47wGHxuSu6Dx7qLSTC8hDMensS0GTXkaXg/hS87ZRHviONsc5WEAmja+mydZwc0VvYYXZc2o8CD5CjWsID8E0mKXoElayBbcQyHsmpTQDoLPlu6TWSmcmrQwx1pIdgMkoHemHBJEpamk7/Unzf/eRJymOFA4d4haTAAAAAElFTkSuQmCC",
+      },
       {
-        name: "MongoDB",
+        name: "Expo",
         image:
-          "https://raw.githubusercontent.com/devicons/devicon/master/icons/mongodb/mongodb-original-wordmark.svg",
+          "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAXVBMVEVHcEwLDhMKDhMLDxMKDhMKDhQHDw8LDw8LDhIKDhIKDxIMDxMKDhMLDhMPDw8JDRELDhMKDhIKDxULDhIJDA8KDRIMDhMKDhILDxMLDxIKDhILDxEJDRMHCxMLDxRJ+fFnAAAAH3RSTlMAn+//j38gQM+/YFDf3xCAoO8w31BfkN9AcK+AgEBwIYLNDwAAAMVJREFUeAGt0MsWQzAUheHNIe1BkWpLr+//mLVErE1i1H5Dg33kx58lqUiaYVcukww7jMwOiDvKTBFVyKJETCWLUx39Q9IgYCohaTjRykq290RrxTnHBzpjbPSpF3GuQEm1gicmGN0iE4U/gFHd+zUe4E9DUCunA/THDTXyB5zarmu1wc27n+BGDxB1E4YHDMicK6GBJxhevpYf6MCWGAq8ZTJgY/ATygmYK67gBMzHgG4SbGLodEsRpe7xRc8HmOntB7/7AmhdCQtgyt3wAAAAAElFTkSuQmCC",
+      },
+      {
+        name: "Xcode",
+        image:
+          "https://developer.apple.com/assets/elements/icons/xcode-12/xcode-12-96x96_2x.png",
+      },
+      {
+        name: "Android Studio",
+        image:
+          "https://developer.android.com/static/studio/images/new-studio-logo-1_1920.png",
       },
     ],
   },
   {
-    title: "Frontend",
+    title: "Frontend & Web",
     skills: [
       {
         name: "React Js",
         image:
           "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9Ii0xMS41IC0xMC4yMzE3NCAyMyAyMC40NjM0OCI+CiAgPHRpdGxlPlJlYWN0IExvZ288L3RpdGxlPgogIDxjaXJjbGUgY3g9IjAiIGN5PSIwIiByPSIyLjA1IiBmaWxsPSIjNjFkYWZiIi8+CiAgPGcgc3Ryb2tlPSIjNjFkYWZiIiBzdHJva2Utd2lkdGg9IjEiIGZpbGw9Im5vbmUiPgogICAgPGVsbGlwc2Ugcng9IjExIiByeT0iNC4yIi8+CiAgICA8ZWxsaXBzZSByeD0iMTEiIHJ5PSI0LjIiIHRyYW5zZm9ybT0icm90YXRlKDYwKSIvPgogICAgPGVsbGlwc2Ugcng9IjExIiByeT0iNC4yIiB0cmFuc2Zvcm09InJvdGF0ZSgxMjApIi8+CiAgPC9nPgo8L3N2Zz4K",
+      },
+      {
+        name: "TypeScript",
+        image:
+          "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/1200px-Typescript_logo_2020.svg.png",
+      },
+      {
+        name: "JavaScript",
+        image:
+          "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/JavaScript-logo.png/800px-JavaScript-logo.png",
       },
       {
         name: "Next Js",
@@ -67,96 +88,45 @@ export const skills = [
         image:
           "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/CSS3_logo_and_wordmark.svg/1452px-CSS3_logo_and_wordmark.svg.png",
       },
-      {
-        name: "JavaScript",
-        image:
-          "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/JavaScript-logo.png/800px-JavaScript-logo.png",
-      },
-      {
-        name: "Bootstrap",
-        image:
-          "https://getbootstrap.com/docs/5.3/assets/brand/bootstrap-logo-shadow.png",
-      },
-      {
-        name: "Material UI",
-        image:
-          "data:image/png;base64,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",
-      },
-      {
-        name: "Angular",
-        image:
-          "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Angular_full_color_logo.svg/2048px-Angular_full_color_logo.svg.png",
-      },
-
     ],
   },
   {
-    title: "Programming Languages",
+    title: "Backend & Database",
     skills: [
       {
-        name: "React Native",
+        name: "Node.js",
         image:
-          "https://www.datocms-assets.com/45470/1631026680-logo-react-native.png"
+          "https://nodejs.org/static/images/logo.svg",
       },
       {
-        name: "Flutter",
+        name: "Firebase",
         image:
-          "https://cdn.icon-icons.com/icons2/2107/PNG/512/file_type_flutter_icon_130599.png"
+          "https://www.vectorlogo.zone/logos/firebase/firebase-icon.svg",
       },
       {
-        name: "Android",
+        name: "MongoDB",
         image:
-          "https://developer.android.com/static/images/brand/Android_Robot.png"
+          "https://raw.githubusercontent.com/devicons/devicon/master/icons/mongodb/mongodb-original-wordmark.svg",
       },
       {
-        name: "iOS",
+        name: "PostgreSQL",
         image:
-          "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/IOS_logo.svg/1200px-IOS_logo.svg.png"
+          "https://raw.githubusercontent.com/devicons/devicon/master/icons/postgresql/postgresql-original-wordmark.svg",
       },
       {
-        name: "Swift",
+        name: "MySQL",
         image:
-          "https://developer.apple.com/swift/images/swift-og.png",
+          "https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original-wordmark.svg",
       },
       {
-        name: "Kotlin",
+        name: "REST APIs",
         image:
-          "https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Kotlin_Icon.svg/1200px-Kotlin_Icon.svg.png",
-      },
-      {
-        name: "JavaScript",
-        image:
-          "https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png",
+          "https://www.vectorlogo.zone/logos/getpostman/getpostman-icon.svg",
       },
     ],
   },
   {
-    title: "Devops",
-    skills: [
-      {
-        name: "Docker",
-        image:
-          "https://wiki.hornbill.com/images/7/70/Docker_logo.png",
-      },
-      {
-        name: "Kubernetes",
-        image:
-          "https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/Kubernetes_logo_without_workmark.svg/1200px-Kubernetes_logo_without_workmark.svg.png",
-      },
-      {
-        name: "AWS Cloud",
-        image:
-          "https://www.pngall.com/wp-content/uploads/13/AWS-Logo-PNG-File.png",
-      },
-      {
-        name: "Linux",
-        image:
-          "https://logos-world.net/wp-content/uploads/2020/09/Linux-Logo.png",
-      },
-    ],
-  },
-  {
-    title: "Others",
+    title: "Tools & DevOps",
     skills: [
       {
         name: "Git",
@@ -166,18 +136,7 @@ export const skills = [
       {
         name: "GitHub",
         image:
-          "https://static-00.iconduck.com/assets.00/gitlab-icon-1024x942-f30d1qro.png",
-      },
-   
-      {
-        name: "Netlify",
-        image:
-          "https://seeklogo.com/images/N/netlify-logo-BD8F8A77E2-seeklogo.com.png",
-      },
-      {
-        name: "Railway.app",
-        image:
-          "https://railway.app/brand/logo-light.png",
+          "https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png",
       },
       {
         name: "VS Code",
@@ -189,27 +148,11 @@ export const skills = [
         image:
           "https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/postman-icon.png",
       },
-     
       {
         name: "Figma",
         image:
           "https://s3-alpha.figma.com/hub/file/1166690750/85f69649-5387-44c2-ba45-81ae13812e36-cover.png",
-      },
-      {
-        name: "Intellij IDEA",
-        image:
-          "https://cdn.freebiesupply.com/logos/large/2x/intellij-idea-1-logo-svg-vector.svg",
-      },
-      {
-        name: "Sublime Text",
-        image:
-          "https://static-00.iconduck.com/assets.00/sublime-text-icon-1024x1024-h15zusdi.png",
-      },
-      {
-        name: "Offset Explorer 2 (Kafka)",
-        image:
-          "https://static.macupdate.com/products/53532/l/offset-explorer-logo.png?v=1633349541",
-      },
+      }
     ],
   },
 ];
@@ -221,7 +164,7 @@ export const experiences = [
     role: "Engineering Manager",
     company: "Bacancy Technology", 
     date: "Feb 2025 - Present",
-    desc: "Leading development of high-performance mobile applications for iOS and Android, driving innovation through advanced technologies and best practices.",
+    desc: "Leading development of high-performance mobile applications for iOS and Android, driving innovation through advanced technologies and best practices. Managing cross-functional teams and establishing mobile development standards across the organization.",
     skills: [
       "React Native",
       "Flutter",
@@ -230,22 +173,22 @@ export const experiences = [
       "Swift",
       "Kotlin",
       "JavaScript",
-      "Docker",
-      "Kubernetes",
-      "AWS",
-      "Linux",
-      "Git",
-      "GitHub",
-      "Netlify",
+      "TypeScript",
+      "Team Leadership",
+      "Project Management",
+      "Mobile Architecture",
+      "Performance Optimization",
+      "CI/CD",
+      "Code Review"
     ],
   },
-    {
+  {
     id: 1,
     img: "https://media.licdn.com/dms/image/v2/C4D0BAQGY2xc6ekS1vQ/company-logo_200_200/company-logo_200_200/0/1661755197818/bacancy_technology_logo?e=1753920000&v=beta&t=Wiak_pwMRqrWUIpWGfmIXXf2jprWQcsbAL6Sugwi5U4",
     role: "Senior Software Engineer",
     company: "Bacancy Technology",
     date: "Aug 2022 - Jan 2025",
-    desc: "Led mobile app development using React Native and TypeScript, implemented Payment UI Module end-to-end, and established automated CI/CD pipelines with GitHub Actions. Utilized GoJS for equipment visualization and maintained code quality through PR reviews.",
+    desc: "Led mobile app development using React Native and TypeScript, implemented Payment UI Module end-to-end, and established automated CI/CD pipelines with GitHub Actions. Utilized GoJS for equipment visualization and maintained code quality through comprehensive PR reviews.",
     skills: [
       "React Native",
       "TypeScript", 
@@ -257,7 +200,9 @@ export const experiences = [
       "Code Review",
       "Mobile Development",
       "AWS",
-      "Docker"
+      "Docker",
+      "Redux",
+      "Firebase"
     ],
   },
   {
@@ -266,7 +211,7 @@ export const experiences = [
     role: "Software Engineer", 
     company: "byPeople Technologies",
     date: "Jan 2019 - Aug 2022",
-    desc: "Developed iOS recovery assistance app with real-time chat, audio/video calls, and community features using Firebase. Created image editing app enabling users to upload, edit and download images.",
+    desc: "Developed iOS recovery assistance app with real-time chat, audio/video calls, and community features using Firebase. Created image editing app enabling users to upload, edit and download images. Built scalable mobile solutions with focus on user experience and performance.",
     skills: [
       "React Native",
       "TypeScript",
@@ -276,9 +221,11 @@ export const experiences = [
       "UIKit",
       "CoreML",
       "CoreData",
-      "CoreML",
+      "Real-time Chat",
+      "Push Notifications",
+      "Image Processing",
+      "Mobile UI/UX"
     ],
-  
   }
 ];
 

@@ -1,147 +1,266 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 
 
 const Button = styled.button`
     display: none;
     width: 100%;
-    padding: 10px;
-    background-color: ${({ theme }) => theme.white};
-    color: ${({ theme }) => theme.text_black};
+    padding: 12px 16px;
+    background: linear-gradient(135deg, ${({ theme }) => theme.primary}, ${({ theme }) => theme.primary}dd);
+    color: ${({ theme }) => theme.white};
     font-size: 14px;
-    font-weight: 700;
+    font-weight: 600;
     border: none;
-    border-radius: 10px;
+    border-radius: 12px;
     cursor: pointer;
-    transition: all 0.8s ease-in-out;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    
+    &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(133, 76, 230, 0.3);
+    }
 `
 const Card = styled.div`
-    width: 330px;
-    height: 490px;
-    background-color: ${({ theme }) => theme.card};
+    width: 350px;
+    min-height: 520px;
+    background: ${({ theme }) => theme.card};
+    background: linear-gradient(145deg, ${({ theme }) => theme.card}, ${({ theme }) => theme.card_light || theme.card});
     cursor: pointer;
-    border-radius: 10px;
-    box-shadow: 0 0 12px 4px rgba(0,0,0,0.4);
+    border-radius: 20px;
+    border: 1px solid ${({ theme }) => theme.primary}15;
+    box-shadow: 
+        0 10px 30px rgba(0, 0, 0, 0.1),
+        0 1px 8px rgba(0, 0, 0, 0.2);
     overflow: hidden;
-    padding: 26px 20px;
+    padding: 0;
     display: flex;
     flex-direction: column;
-    gap: 14px;
-    transition: all 0.5s ease-in-out;
-    &:hover {
-        transform: translateY(-10px);
-        box-shadow: 0 0 50px 4px rgba(0,0,0,0.6);
-        filter: brightness(1.1);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: linear-gradient(90deg, ${({ theme }) => theme.primary}, ${({ theme }) => theme.primary}80);
+        opacity: 0;
+        transition: opacity 0.3s ease;
     }
+    
+    &:hover {
+        transform: translateY(-12px) scale(1.02);
+        box-shadow: 
+            0 25px 50px rgba(0, 0, 0, 0.15),
+            0 12px 24px rgba(133, 76, 230, 0.1);
+    }
+    
+    &:hover::before {
+        opacity: 1;
+    }
+    
     &:hover ${Button} {
         display: block;
     }
+    
+    @media (max-width: 768px) {
+        width: 320px;
+        min-height: 480px;
+    }
+`
+
+const ImageContainer = styled.div`
+    width: 100%;
+    height: 200px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px 20px 0 0;
+    background: linear-gradient(135deg, ${({ theme }) => theme.primary}10, ${({ theme }) => theme.primary}05);
 `
 
 const Image = styled.img`
     width: 100%;
-    height: 180px;
-    background-color: ${({ theme }) => theme.white};
-    border-radius: 10px;
-    box-shadow: 0 0 16px 2px rgba(0,0,0,0.3);
+    height: 100%;
+    object-fit: cover;
+    transition: all 0.4s ease;
+    
+    ${Card}:hover & {
+        transform: scale(1.1);
+    }
+`
+
+const ImageFallback = styled.div`
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, ${({ theme }) => theme.primary}20, ${({ theme }) => theme.primary}10);
+    color: ${({ theme }) => theme.primary};
+    font-size: 48px;
+    font-weight: 600;
+`
+
+const CardContent = styled.div`
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    flex: 1;
 `
 
 const Tags = styled.div`
-    width: 100%;
     display: flex;
     align-items: center;
     flex-wrap: wrap;
     gap: 8px;
-    margin-top: 4px;
 `
 
 const Tag = styled.span`
-    font-size: 12px;
-    font-weight: 400;
+    font-size: 11px;
+    font-weight: 500;
     color: ${({ theme }) => theme.primary};
-    background-color: ${({ theme }) => theme.primary + 15};
-    padding: 2px 8px;
-    border-radius: 10px;
+    background: ${({ theme }) => theme.primary}15;
+    backdrop-filter: blur(10px);
+    padding: 6px 12px;
+    border-radius: 20px;
+    border: 1px solid ${({ theme }) => theme.primary}20;
+    transition: all 0.2s ease;
+    
+    &:hover {
+        background: ${({ theme }) => theme.primary}25;
+        transform: translateY(-1px);
+    }
 `
 
 const Details = styled.div`
-    width: 100%;
     display: flex;
     flex-direction: column;
-    gap: 0px;
-    padding: 0px 2px;
+    gap: 8px;
+    flex: 1;
 `
-const Title = styled.div`
-    font-size: 20px;
-    font-weight: 600;
-    color: ${({ theme }) => theme.text_secondary};
+const Title = styled.h3`
+    font-size: 22px;
+    font-weight: 700;
+    color: ${({ theme }) => theme.text_primary};
+    margin: 0;
+    line-height: 1.3;
     overflow: hidden;
     display: -webkit-box;
-    max-width: 100%;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
-    overflow: hidden;
     text-overflow: ellipsis;
+    
+    ${Card}:hover & {
+        color: ${({ theme }) => theme.primary};
+    }
 `
 
 const Date = styled.div`
-    font-size: 12px;
-    margin-left: 2px;
-    font-weight: 400;
-    color: ${({ theme }) => theme.text_secondary + 80};
+    font-size: 13px;
+    font-weight: 500;
+    color: ${({ theme }) => theme.text_secondary};
+    opacity: 0.8;
+    
     @media only screen and (max-width: 768px){
-        font-size: 10px;
+        font-size: 12px;
     }
 `
 
 
-const Description = styled.div`
+const Description = styled.p`
+    font-size: 14px;
     font-weight: 400;
-    color: ${({ theme }) => theme.text_secondary + 99};
+    color: ${({ theme }) => theme.text_secondary};
+    line-height: 1.5;
+    margin: 0;
     overflow: hidden;
-    margin-top: 8px;
     display: -webkit-box;
-    max-width: 100%;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
     text-overflow: ellipsis;
+    opacity: 0.9;
 `
 
 const Members = styled.div`
     display: flex;
     align-items: center;
-    padding-left: 10px;
-`
-const Avatar = styled.img`
-    width: 38px;
-    height: 38px;
-    border-radius: 50%;
-    margin-left: -10px;
-    background-color: ${({ theme }) => theme.white};
-    box-shadow: 0 0 10px rgba(0,0,0,0.2);
-    border: 3px solid ${({ theme }) => theme.card};
+    gap: 8px;
+    margin-top: auto;
 `
 
-const ProjectCards = ({project,setOpenModal}) => {
+const Avatar = styled.img`
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: ${({ theme }) => theme.white};
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    border: 2px solid ${({ theme }) => theme.card};
+    transition: transform 0.2s ease;
+    
+    &:hover {
+        transform: scale(1.1);
+    }
+`
+
+const ProjectCards = ({project, setOpenModal}) => {
+    const [imageError, setImageError] = useState(false);
+    
+    const handleImageError = () => {
+        setImageError(true);
+    };
+    
+    const getProjectIcon = (title) => {
+        const firstLetter = title?.charAt(0)?.toUpperCase() || 'P';
+        return firstLetter;
+    };
+    
     return (
         <Card onClick={() => setOpenModal({state: true, project: project})}>
-            <Image src={project.image}/>
-            <Tags>
-                {project.tags?.slice(0, 8).map((tag, index) => (
-                <Tag>{tag}</Tag>
-                ))}
-            </Tags>
-            <Details>
-                <Title>{project.title}</Title>
-                <Date>{project.date}</Date>
-                <Description>{project.description}</Description>
-            </Details>
-            <Members>
-                {project.member?.map((member) => (
-                    <Avatar src={member.img}/>
-                ))}
-            </Members>
-            {/* <Button>View Project</Button> */}
+            <ImageContainer>
+                {!imageError ? (
+                    <Image 
+                        src={project.image} 
+                        alt={project.title}
+                        onError={handleImageError}
+                        loading="lazy"
+                    />
+                ) : (
+                    <ImageFallback>
+                        {getProjectIcon(project.title)}
+                    </ImageFallback>
+                )}
+            </ImageContainer>
+            
+            <CardContent>
+                <Details>
+                    <Title>{project.title}</Title>
+                    <Date>{project.date}</Date>
+                    <Description>{project.description}</Description>
+                </Details>
+                
+                <Tags>
+                    {project.tags?.slice(0, 6).map((tag, index) => (
+                        <Tag key={index}>{tag}</Tag>
+                    ))}
+                </Tags>
+                
+                {project.member && project.member.length > 0 && (
+                    <Members>
+                        {project.member.slice(0, 3).map((member, index) => (
+                            <Avatar key={index} src={member.img} alt={member.name || 'Team member'}/>
+                        ))}
+                        {project.member.length > 3 && (
+                            <span style={{fontSize: '12px', color: 'inherit', opacity: 0.7}}>+{project.member.length - 3} more</span>
+                        )}
+                    </Members>
+                )}
+                
+                <Button>View Details</Button>
+            </CardContent>
         </Card>
     )
 }

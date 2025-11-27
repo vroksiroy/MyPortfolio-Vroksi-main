@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { useRef } from 'react';
-// import emailjs from '@emailjs/browser';
+import emailjs from '@emailjs/browser';
 import { Snackbar } from '@mui/material';
 
 const Container = styled.div`
@@ -130,13 +130,18 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // emailjs.sendForm('service_cb9uvf1', 'template_io55zmv', form.current, '_J3CZczmsFWEOvlVX')
-    //   .then((result) => {
-    //     setOpen(true);
-    //     form.current.reset();
-    //   }, (error) => {
-    //     console.log(error.text);
-    //   });
+    emailjs.sendForm(
+      process.env.REACT_APP_EMAILJS_SERVICE_ID,
+      process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
+      form.current,
+      process.env.REACT_APP_EMAILJS_PUBLIC_KEY
+    )
+      .then((result) => {
+        setOpen(true);
+        form.current.reset();
+      }, (error) => {
+        console.log(error.text);
+      });
   }
 
 

@@ -1,34 +1,46 @@
 import { CloseRounded, GitHub, LinkedIn } from '@mui/icons-material';
 import { Modal } from '@mui/material';
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 
 const Container = styled.div`
-width: 100%;
-height: 100%;
-position: absolute;
-top: 0;
-left: 0;
-background-color: #000000a7;
-display: flex;
-align-items: top;
-justify-content: center;
-overflow-y: scroll;
-transition: all 0.5s ease;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow-y: auto;
+    transition: all 0.3s ease;
+    z-index: 1000;
 `;
 
 const Wrapper = styled.div`
-max-width: 800px;
-width: 100%;
-border-radius: 16px;
-margin: 50px 12px;
-height: min-content;
-background-color: ${({ theme }) => theme.card};
-color: ${({ theme }) => theme.text_primary};
-padding: 20px;
-display: flex;
-flex-direction: column;
-position: relative;
+    max-width: 900px;
+    width: 95%;
+    max-height: 90vh;
+    border-radius: 24px;
+    margin: 20px;
+    background: ${({ theme }) => theme.card};
+    border: 1px solid ${({ theme }) => theme.border || theme.primary}15;
+    color: ${({ theme }) => theme.text_primary};
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow-y: auto;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
+    
+    @media (max-width: 768px) {
+        padding: 24px;
+        margin: 10px;
+        width: 98%;
+        max-height: 95vh;
+    }
 `;
 
 const Title = styled.div`
@@ -65,12 +77,40 @@ const Desc = styled.div`
     }
 `;
 
+const ImageContainer = styled.div`
+    width: 100%;
+    height: 300px;
+    border-radius: 16px;
+    margin: 24px 0;
+    overflow: hidden;
+    background: linear-gradient(135deg, ${({ theme }) => theme.primary}10, ${({ theme }) => theme.primary}05);
+    
+    @media (max-width: 768px) {
+        height: 200px;
+    }
+`;
+
 const Image = styled.img`
     width: 100%;
+    height: 100%;
     object-fit: cover;
-    border-radius: 12px;
-    margin-top: 30px;
-    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.3);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+`;
+
+const ImageFallback = styled.div`
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, ${({ theme }) => theme.primary}20, ${({ theme }) => theme.primary}10);
+    color: ${({ theme }) => theme.primary};
+    font-size: 64px;
+    font-weight: 700;
+    
+    @media (max-width: 768px) {
+        font-size: 48px;
+    }
 `;
 
 const Label = styled.div`
@@ -93,16 +133,25 @@ const Tags = styled.div`
     }
 `;
 
-const Tag = styled.div`
-    font-size: 14px;
-    font-weight: 400;
+const Tag = styled.span`
+    font-size: 13px;
+    font-weight: 500;
     color: ${({ theme }) => theme.primary};
-    margin: 4px;
-    padding: 4px 8px;
-    border-radius: 8px;
-    background-color: ${({ theme }) => theme.primary + 20};
+    margin: 4px 8px 4px 0;
+    padding: 8px 16px;
+    background: ${({ theme }) => theme.primary}15;
+    border: 1px solid ${({ theme }) => theme.primary}25;
+    border-radius: 20px;
+    transition: all 0.2s ease;
+    
+    &:hover {
+        background: ${({ theme }) => theme.primary}25;
+        transform: translateY(-1px);
+    }
+    
     @media only screen and (max-width: 600px) {
         font-size: 12px;
+        padding: 6px 12px;
     }
 `;
 
@@ -182,8 +231,19 @@ const MemberName = styled.div`
 // `;
 
 
-const index = ({ openModal, setOpenModal }) => {
+const ProjectDetails = ({ openModal, setOpenModal }) => {
     const project = openModal?.project;
+    const [imageError, setImageError] = useState(false);
+    
+    const handleImageError = () => {
+        setImageError(true);
+    };
+    
+    const getProjectIcon = (title) => {
+        const firstLetter = title?.charAt(0)?.toUpperCase() || 'P';
+        return firstLetter;
+    };
+    
     return (
         <Modal open={true} onClose={() => setOpenModal({ state: false, project: null })}>
             <Container>
@@ -197,12 +257,25 @@ const index = ({ openModal, setOpenModal }) => {
                         }}
                         onClick={() => setOpenModal({ state: false, project: null })}
                     />
-                    <Image src={project?.image} style={{width: '100%', height: 200, objectFit: 'contain'}}/>
+                    <ImageContainer>
+                        {!imageError ? (
+                            <Image 
+                                src={project?.image} 
+                                alt={project?.title || 'Project image'}
+                                onError={handleImageError}
+                                loading="lazy"
+                            />
+                        ) : (
+                            <ImageFallback>
+                                {getProjectIcon(project?.title)}
+                            </ImageFallback>
+                        )}
+                    </ImageContainer>
                     <Title>{project?.title}</Title>
                     <Date>{project.date}</Date>
                     <Tags>
-                        {project?.tags.map((tag) => (
-                            <Tag>{tag}</Tag>
+                        {project?.tags.map((tag, index) => (
+                            <Tag key={index}>{tag}</Tag>
                         ))}
                     </Tags>
                     <Desc>{project?.description}</Desc>
@@ -236,4 +309,4 @@ const index = ({ openModal, setOpenModal }) => {
     )
 }
 
-export default index
+export default ProjectDetails

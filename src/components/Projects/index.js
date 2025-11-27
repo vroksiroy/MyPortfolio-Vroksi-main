@@ -12,18 +12,28 @@ const Projects = ({openModal,setOpenModal}) => {
       <Wrapper>
         <Title>Projects</Title>
         <Desc>
-          I have worked on a wide range of projects. From web apps to deployement. Here are some of my projects.
+          Explore my portfolio of innovative projects spanning mobile applications, web development, and cutting-edge technologies. Each project represents a unique challenge solved with creativity and technical excellence.
         </Desc>
      
-        <CardContainer>
+        <CardContainer className="stagger-animation">
           {toggle === 'all' && projects
-            .map((project) => (
-              <ProjectCard project={project} openModal={openModal} setOpenModal={setOpenModal}/>
+            .map((project, index) => (
+              <ProjectCard 
+                key={project.id || index}
+                project={project} 
+                openModal={openModal} 
+                setOpenModal={setOpenModal}
+              />
             ))}
           {projects
             .filter((item) => item.category === toggle)
-            .map((project) => (
-              <ProjectCard project={project} openModal={openModal} setOpenModal={setOpenModal}/>
+            .map((project, index) => (
+              <ProjectCard 
+                key={project.id || index}
+                project={project} 
+                openModal={openModal} 
+                setOpenModal={setOpenModal}
+              />
             ))}
         </CardContainer>
       </Wrapper>
