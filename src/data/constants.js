@@ -6,6 +6,7 @@ export const Bio = {
   intro:
     "I'm a Lead Engineer with 7.5+ years of shipping React Native and Next.js products in healthcare, AI, fintech and social. I own the whole path: architecture, Node.js services, mobile delivery, CI/CD and production. I also make the engineers around me better.",
   email: "royvroksi@gmail.com",
+  phone: "+91 99098 27255",
   github: "https://github.com/vroksiroy",
   linkedin: "https://www.linkedin.com/in/vroksiroy/",
   resume: "https://drive.google.com/file/d/1wnd_nojbvDqDzPGpYsIiAJwCkP6qV_cR/view?usp=sharing",

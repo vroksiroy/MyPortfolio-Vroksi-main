@@ -73,6 +73,20 @@ const Email = styled.a`
   }
 `
 
+const Phone = styled.a`
+  position: relative;
+  display: inline-block;
+  margin-top: 16px;
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-size: clamp(24px, 3vw, 34px);
+  line-height: 1.1;
+  opacity: 0.85;
+  &:hover {
+    opacity: 1;
+    color: ${({ theme }) => theme.accent};
+  }
+`
+
 const CopyButton = styled.button`
   display: inline-flex;
   align-items: center;
@@ -157,6 +171,7 @@ const Contact = () => {
               {copied ? <><CheckIcon /> Copied</> : <><ContentCopyIcon /> Copy</>}
             </CopyButton>
           </EmailRow>
+          <Phone href={`tel:${Bio.phone.replace(/\s/g, '')}`}>{Bio.phone}</Phone>
           <Bottom>
             <Links>
               <LinkOut href={Bio.linkedin} target="_blank" rel="noreferrer">LinkedIn <NorthEastIcon /></LinkOut>
