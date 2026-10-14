@@ -1,401 +1,322 @@
 export const Bio = {
   name: "Vroksi Roy",
-  roles: [
-    "Senior React Native Developer",
-    "Mobile App Architect",
-    "Cross-Platform Expert"
-  ],
-  description:
-    "Passionate mobile application developer with 7 years of experience crafting high-performance iOS and Android apps. Specialized in React Native development with deep expertise in Flutter, native iOS (Swift), and Android (Kotlin). I thrive on building scalable mobile architectures, optimizing app performance, and delivering seamless user experiences across platforms.",
+  role: "Lead Engineer",
+  location: "Ahmedabad, India",
+  timezone: "Asia/Kolkata",
+  intro:
+    "I'm a Lead Engineer with 7.5+ years of shipping React Native and Next.js products in healthcare, AI, fintech and social. I own the whole path: architecture, Node.js services, mobile delivery, CI/CD and production. I also make the engineers around me better.",
+  email: "royvroksi@gmail.com",
   github: "https://github.com/vroksiroy",
-  resume: "https://drive.google.com/file/d/1Ac433qEUusO2OzAsPD3crhW_oBPxLW7L/view?usp=sharing",
   linkedin: "https://www.linkedin.com/in/vroksiroy/",
-  twitter: "",
-  insta: "",
-  topmate: "https://topmate.io/roy_vroksi/",
+  resume: "https://drive.google.com/file/d/1wnd_nojbvDqDzPGpYsIiAJwCkP6qV_cR/view?usp=sharing",
+  // Path to a square headshot in /public, e.g. "/headshot.jpg". Empty shows the VR badge.
+  photo: "",
 };
 
-export const skills = [
+export const facts = [
+  { label: "Experience", value: "7.5+", unit: "years" },
+  { label: "Production apps", value: "9+", unit: "shipped" },
+  { label: "Largest reach", value: "140K+", unit: "downloads" },
+  { label: "Test coverage", value: "95%", unit: "automated" },
+];
+
+export const principles = [
   {
-    title: "Mobile Development",
-    skills: [
-      {
-        name: "React Native",
-        image:
-          "https://www.datocms-assets.com/45470/1631026680-logo-react-native.png"
-      },
-      {
-        name: "Flutter",
-        image:
-          "https://cdn.icon-icons.com/icons2/2107/PNG/512/file_type_flutter_icon_130599.png"
-      },
-      {
-        name: "iOS (Swift)",
-        image:
-          "https://developer.apple.com/swift/images/swift-og.png",
-      },
-      {
-        name: "Android (Kotlin)",
-        image:
-          "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAMAAABF0y+mAAAAWlBMVEVHcExatmAyikU9lEpJpFdTr1tVsl1PrlRIolRQrFowiUFYtFxWs1tGnVNPr1NZtl9Vs1pRsVZduWRivWhMp1ZUr14GBAZHoVNBlEsvOzBBmksvZjE9jkY+fUJA+EjFAAAADnRSTlMAv9i+Zp1xMBW0NFHkj7ECPhsAAADQSURBVCiRzdDdEoIgEAVgTNToh11wF9Tq/V+zpRiCmu49V8inu2dUapc5fV9Mn2O/XVu7xkM5HzY61naMywdPC3U1mnivFvWEZ1mkx1HLtglj38xxF+PwHXNxsdkyIOR47wGHxuSu6Dx7qLSTC8hDMensS0GTXkaXg/hS87ZRHviONsc5WEAmja+mydZwc0VvYYXZc2o8CD5CjWsID8E0mKXoElayBbcQyHsmpTQDoLPlu6TWSmcmrQwx1pIdgMkoHemHBJEpamk7/Unzf/eRJymOFA4d4haTAAAAAElFTkSuQmCC",
-      },
-      {
-        name: "Expo",
-        image:
-          "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAXVBMVEVHcEwLDhMKDhMLDxMKDhMKDhQHDw8LDw8LDhIKDhIKDxIMDxMKDhMLDhMPDw8JDRELDhMKDhIKDxULDhIJDA8KDRIMDhMKDhILDxMLDxIKDhILDxEJDRMHCxMLDxRJ+fFnAAAAH3RSTlMAn+//j38gQM+/YFDf3xCAoO8w31BfkN9AcK+AgEBwIYLNDwAAAMVJREFUeAGt0MsWQzAUheHNIe1BkWpLr+//mLVErE1i1H5Dg33kx58lqUiaYVcukww7jMwOiDvKTBFVyKJETCWLUx39Q9IgYCohaTjRykq290RrxTnHBzpjbPSpF3GuQEm1gicmGN0iE4U/gFHd+zUe4E9DUCunA/THDTXyB5zarmu1wc27n+BGDxB1E4YHDMicK6GBJxhevpYf6MCWGAq8ZTJgY/ATygmYK67gBMzHgG4SbGLodEsRpe7xRc8HmOntB7/7AmhdCQtgyt3wAAAAAElFTkSuQmCC",
-      },
-      {
-        name: "Xcode",
-        image:
-          "https://developer.apple.com/assets/elements/icons/xcode-12/xcode-12-96x96_2x.png",
-      },
-      {
-        name: "Android Studio",
-        image:
-          "https://developer.android.com/static/studio/images/new-studio-logo-1_1920.png",
-      },
-    ],
+    title: "Architecture first",
+    body: "Shared Node.js services that power both the Next.js web app and the React Native app, built on Clean Architecture, SOLID and modular, domain-driven boundaries.",
+    proof: "4 full-stack products on shared services",
   },
   {
-    title: "Frontend & Web",
-    skills: [
-      {
-        name: "React Js",
-        image:
-          "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9Ii0xMS41IC0xMC4yMzE3NCAyMyAyMC40NjM0OCI+CiAgPHRpdGxlPlJlYWN0IExvZ288L3RpdGxlPgogIDxjaXJjbGUgY3g9IjAiIGN5PSIwIiByPSIyLjA1IiBmaWxsPSIjNjFkYWZiIi8+CiAgPGcgc3Ryb2tlPSIjNjFkYWZiIiBzdHJva2Utd2lkdGg9IjEiIGZpbGw9Im5vbmUiPgogICAgPGVsbGlwc2Ugcng9IjExIiByeT0iNC4yIi8+CiAgICA8ZWxsaXBzZSByeD0iMTEiIHJ5PSI0LjIiIHRyYW5zZm9ybT0icm90YXRlKDYwKSIvPgogICAgPGVsbGlwc2Ugcng9IjExIiByeT0iNC4yIiB0cmFuc2Zvcm09InJvdGF0ZSgxMjApIi8+CiAgPC9nPgo8L3N2Zz4K",
-      },
-      {
-        name: "TypeScript",
-        image:
-          "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/1200px-Typescript_logo_2020.svg.png",
-      },
-      {
-        name: "JavaScript",
-        image:
-          "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/JavaScript-logo.png/800px-JavaScript-logo.png",
-      },
-      {
-        name: "Next Js",
-        image:
-          "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAACTklEQVR4Ab1XAaQqURB9DyohSykREpRIQSAlBCoECKUFCSRCBBEAaSEABQEoCIEASCwAUICALgCo83do0//9v819XX845O7VnDkzOzP7JWGaBd3C3IJpQVjAHeJ+Rs9a97vKLGrBsB1KgMhEP3FMUUwt4ENMfxr1yQIU4SSjRkbeOZtERmHk6pXQVDlnkHh9S+QLTm1hkiz4n/gzFQuny9FoFLquE+i34x+n02k0m00UCoV3BIzn3MMJrVYLtp1OJ0cS/X4f5/MZhmG8IyDsWtDfEaDIn2232/3zbrvdxuFwwGg04qRBt+VnETBNE0IIkE2n07/erdfrWK/X6Ha73Hb9ZXII3G43ivy3dNRqtZe7lUoFs9mM6oBDwCQCgquALT1FT3a5XF7qIZ/PYzgcolqtcggIIgBZAgRKB6lCRalp2uM8k8mAVMrlchwC+DEBipycE4n5fP44j8ViKJVKSCaTbAJCpgaez4vFIsjoWa/XA50FAgEkEgmEw2F2CkxZBZ5Br5tt1ITcbjd8Ph88Hg+7CBefECCsVitS4aVJcV9D/VMCVITk/Hq9YrPZyBBo2a1YMGvAcQYcj0cCtWMugcdYNhjDiBrP25mx3++x3W6RzWZZ8isfxzQLlsslJpMJpYY5jhkqcOH1ejEYDDAej9FoNOByuZxGsfqVzC7KTqcDSkkqleKsZOqX0mAwiHK5DGrJfr+fs5SqX8sjkQji8ThCoRC+v78Za7l6JagrUh3YkUuZpqgwDaecc9VYSDoV5Fg+at7n+eLN57kuE/EvzHr/Kvs31aYAAAAASUVORK5CYII=",
-      },
-      {
-        name: "HTML",
-        image: "https://www.w3.org/html/logo/badge/html5-badge-h-solo.png",
-      },
-      {
-        name: "CSS",
-        image:
-          "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/CSS3_logo_and_wordmark.svg/1452px-CSS3_logo_and_wordmark.svg.png",
-      },
-    ],
+    title: "Quality by default",
+    body: "Testing is part of the definition of done. Jest and Detox suites catch regressions before users do, so teams can ship without fear.",
+    proof: "95% automated test coverage",
   },
   {
-    title: "Backend & Database",
-    skills: [
-      {
-        name: "Node.js",
-        image:
-          "https://nodejs.org/static/images/logo.svg",
-      },
-      {
-        name: "Firebase",
-        image:
-          "https://www.vectorlogo.zone/logos/firebase/firebase-icon.svg",
-      },
-      {
-        name: "MongoDB",
-        image:
-          "https://raw.githubusercontent.com/devicons/devicon/master/icons/mongodb/mongodb-original-wordmark.svg",
-      },
-      {
-        name: "PostgreSQL",
-        image:
-          "https://raw.githubusercontent.com/devicons/devicon/master/icons/postgresql/postgresql-original-wordmark.svg",
-      },
-      {
-        name: "MySQL",
-        image:
-          "https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original-wordmark.svg",
-      },
-      {
-        name: "REST APIs",
-        image:
-          "https://www.vectorlogo.zone/logos/getpostman/getpostman-icon.svg",
-      },
-    ],
+    title: "Ship continuously",
+    body: "Automated build, test and release pipelines on Bitrise and GitHub Actions, with Datadog watching production.",
+    proof: "50% faster releases, 30% fewer defects",
   },
   {
-    title: "Tools & DevOps",
-    skills: [
-      {
-        name: "Git",
-        image:
-          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTEkW5QVyzoVT_A8dA6aG4Y6mf_q64EjDpnpRxm49mvUg&s",
-      },
-      {
-        name: "GitHub",
-        image:
-          "https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png",
-      },
-      {
-        name: "VS Code",
-        image:
-          "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Visual_Studio_Code_1.35_icon.svg/512px-Visual_Studio_Code_1.35_icon.svg.png?20210804221519",
-      },
-      {
-        name: "Postman",
-        image:
-          "https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/postman-icon.png",
-      },
-      {
-        name: "Figma",
-        image:
-          "https://s3-alpha.figma.com/hub/file/1166690750/85f69649-5387-44c2-ba45-81ae13812e36-cover.png",
-      }
-    ],
+    title: "Grow the team",
+    body: "Code reviews, pair programming and architecture discussions that raise the bar for the whole team, not just my own pull requests.",
+    proof: "Team of the Quarter, 2025",
   },
 ];
 
 export const experiences = [
   {
     id: 0,
-    img: "https://media.licdn.com/dms/image/v2/C4D0BAQGY2xc6ekS1vQ/company-logo_200_200/company-logo_200_200/0/1661755197818/bacancy_technology_logo?e=1753920000&v=beta&t=Wiak_pwMRqrWUIpWGfmIXXf2jprWQcsbAL6Sugwi5U4",
-    role: "Engineering Manager",
-    company: "Bacancy Technology", 
-    date: "Feb 2025 - Present",
-    desc: "Leading development of high-performance mobile applications for iOS and Android, driving innovation through advanced technologies and best practices. Managing cross-functional teams and establishing mobile development standards across the organization.",
-    skills: [
-      "React Native",
-      "Flutter",
-      "Android",
-      "iOS",
-      "Swift",
-      "Kotlin",
-      "JavaScript",
-      "TypeScript",
-      "Team Leadership",
-      "Project Management",
-      "Mobile Architecture",
-      "Performance Optimization",
-      "CI/CD",
-      "Code Review"
+    role: "Lead Engineer, Next.js & React Native",
+    company: "Bacancy Technology",
+    location: "Ahmedabad",
+    date: "2022 - Now",
+    highlights: [
+      "Led architecture and delivery of **4 production full-stack apps** on shared Node.js services across healthcare, AI, DeFi and social.",
+      "Built Bitrise CI/CD that cut release cycles by **50%** and production defects by **30%**.",
+      "Raised automated test coverage to **95%** with Jest and Detox.",
+      "Shipped AI features: real-time AI content detection, multi-provider email summarization and task automation.",
+      "Mentored engineers through reviews, pairing and architecture sessions.",
     ],
   },
   {
     id: 1,
-    img: "https://media.licdn.com/dms/image/v2/C4D0BAQGY2xc6ekS1vQ/company-logo_200_200/company-logo_200_200/0/1661755197818/bacancy_technology_logo?e=1753920000&v=beta&t=Wiak_pwMRqrWUIpWGfmIXXf2jprWQcsbAL6Sugwi5U4",
-    role: "Senior Software Engineer",
-    company: "Bacancy Technology",
-    date: "Aug 2022 - Jan 2025",
-    desc: "Led mobile app development using React Native and TypeScript, implemented Payment UI Module end-to-end, and established automated CI/CD pipelines with GitHub Actions. Utilized GoJS for equipment visualization and maintained code quality through comprehensive PR reviews.",
-    skills: [
-      "React Native",
-      "TypeScript", 
-      "Expo",
-      "GitHub Actions",
-      "GoJS",
-      "Payment Integration",
-      "CI/CD",
-      "Code Review",
-      "Mobile Development",
-      "AWS",
-      "Docker",
-      "Redux",
-      "Firebase"
+    role: "Software Engineer, React & React Native",
+    company: "ByPeople Technologies",
+    location: "Ahmedabad",
+    date: "2019 - 2022",
+    highlights: [
+      "Designed and delivered **5+ cross-platform apps** with React and React Native, including production healthcare apps.",
+      "Built secure auth and integrations with OAuth 2.0, JWT and REST APIs.",
+      "Introduced Clean Architecture and Git-based code reviews, improving maintainability and **reducing crash rates**.",
     ],
   },
+];
+
+export const awards = [
+  { title: "Team of the Quarter", date: "2025" },
+  { title: "Spot Award: Going the Extra Mile", date: "Feb 2025" },
+  { title: "Spot Award: Outstanding Delivery", date: "Dec 2024" },
+  { title: "Spot Award: AVR Base Contribution", date: "Aug 2023" },
+];
+
+export const toolbox = [
   {
-    id: 2,
-    img: "https://media.licdn.com/dms/image/v2/D4D0BAQG7JpI5xRY9rw/company-logo_200_200/company-logo_200_200/0/1684500196413/bypeople_technologies_logo?e=1753920000&v=beta&t=k9VrjYke-v0JizqywZ5toJPy_y8X_GDpKzwa-76pP9E",
-    role: "Software Engineer", 
-    company: "byPeople Technologies",
-    date: "Jan 2019 - Aug 2022",
-    desc: "Developed iOS recovery assistance app with real-time chat, audio/video calls, and community features using Firebase. Created image editing app enabling users to upload, edit and download images. Built scalable mobile solutions with focus on user experience and performance.",
-    skills: [
-      "React Native",
-      "TypeScript",
-      "Expo",
-      "Swift",
-      "Firebase",
-      "UIKit",
-      "CoreML",
-      "CoreData",
-      "Real-time Chat",
-      "Push Notifications",
-      "Image Processing",
-      "Mobile UI/UX"
-    ],
-  }
+    title: "Mobile & Web",
+    items: ["React Native (CLI + Expo)", "Next.js, React.js", "TypeScript, JavaScript, Swift", "Redux Toolkit, Zustand", "TanStack Query", "React Navigation"],
+  },
+  {
+    title: "Backend & AI",
+    items: ["Node.js, Express.js", "GraphQL (Apollo), REST", "WebSockets, Socket.IO", "JWT, OAuth 2.0, Redis", "LLM integrations", "Perplexity AI"],
+  },
+  {
+    title: "Quality & Architecture",
+    items: ["Jest, Detox, TDD", "Clean Architecture, SOLID", "MVVM, MVC", "Domain-Driven Design", "Modular design"],
+  },
+  {
+    title: "Delivery & Cloud",
+    items: ["Bitrise, GitHub Actions", "AWS, Azure, Docker", "Datadog monitoring", "Firebase (Auth, FCM, Links)", "App Store & Play Store releases"],
+  },
 ];
 
 export const projects = [
   {
-    id: 4,
-    title: "Pillar Multichain DeFi Wallet",
-    date: "Jan 2023 - Mar 2023",
-    description:
-      "Led development of a multi-chain crypto wallet supporting 10k+ users, implementing secure authentication, optimizing transaction speed by 30%, and managing a team of 18+ engineers to achieve 50% increase in user engagement through Azure Cloud services",
-    image:
-      "https://media.licdn.com/dms/image/v2/D4E0BAQFA_bSdkROfOA/company-logo_200_200/company-logo_200_200/0/1688457159684/pillarproject_logo?e=1753920000&v=beta&t=-oU6REGLq43LrQo3tOsC3gx3lMVOfvAVkG3uvAgHNgI",
-      tags: [
-        "React Native",
-        "TypeScript",
-        "OAuth",
-        "Firebase Auth",
-        "Bitrise",
-        "CI/CD",
-        "Expo",
-        "EAS Build",
-        "Xcode",
-        "Android Studio",
-        "Blockchain",
-        "Azure Cloud",
-        "Team Leadership",
-        "Performance Optimization",
-        "Multi-chain Integration",
-        "Wallet Security",
-        "Mobile Development",
-        "Scalable Architecture"
-      ],
-    github: "https://github.com/HimanshuSingour/India-RailwayWise-Your-Journey-Our-Management",
-
-    
+    id: 7,
+    slug: "commas",
+    featured: true,
+    title: "Commas",
+    tagline: "The money app for people who earn online.",
+    domain: "Fintech · Creator economy",
+    platform: "Android",
+    scope: "Mobile app engineering",
+    color: "#3B82F6",
+    problem:
+      "Creators, coaches and small teams sell online but juggle separate tools for payments, payouts and customers. Commas (formerly FanBasis) puts the whole business in one app, and its latest release is a complete redesign built for speed and clarity.",
+    metrics: [
+      { value: "Real-time", label: "revenue, orders + customers" },
+      { value: "Instant", label: "withdrawals from the wallet" },
+    ],
+    approachLabel: "What shipped",
+    approach: [
+      { title: "Business setup in minutes", body: "Onboarding that takes a new creator or team from sign-up to a live business quickly." },
+      { title: "Live revenue dashboard", body: "Revenue, transactions, average order value and new customers, updating as sales happen." },
+      { title: "Wallet and payouts", body: "Total balance split into pending and available funds, early withdrawal and a searchable activity history." },
+      { title: "Customer insights", body: "Total spend and purchase history for every buyer, so sellers know their best customers." },
+    ],
+    outcome:
+      "A full redesign shipped to Google Play: faster navigation, smoother performance and a rebuilt wallet, payments and customer management, with a new Studios feature since.",
+    stack: [],
+    screenshots: ["/work/commas-1.png", "/work/commas-2.png", "/work/commas-3.png", "/work/commas-4.png"],
+    screenshotStyle: "store",
+    screenshotCredit: "Google Play listing",
+    playstore: "https://play.google.com/store/apps/details?id=com.tiburondata.fanbasisapp",
   },
   {
-    id: 5,
-    title: "AVR Base",
-    date: "Dec 2023 - Apr 2024",
-    description:
-      "Developed a cyclist community platform with real-time chat using React Native, Redux, and WebSockets, achieving 35% higher user engagement and 45% faster data fetching through optimized backend architecture",
-    image:
-      "https://media.licdn.com/dms/image/v2/D560BAQFynaUTgzx_1A/company-logo_200_200/company-logo_200_200/0/1714794041331?e=1753920000&v=beta&t=Ffe7c43OvlXTudpQwuvB1HOKhSAnSutD_JOH69GAJhs",
-      tags: [
-        "React Native",
-        "Redux",
-        "Node.js",
-        "RESTful APIs", 
-        "Redis",
-        "TanStack Query",
-        "WebSockets",
-        "Real-time Chat",
-        "Figma",
-        "UI/UX Design",
-        "Jest",
-        "Detox",
-        "Test Coverage",
-        "Mobile Development",
-        "Performance Optimization",
-        "State Management",
-        "Caching",
-        "Community Platform"
-      ],
-
-    github: "https://github.com/HimanshuSingour/Flight-Booking-Application-",
-
-  },
-  {
-    id: 6,
-    title: "Warpspeed",
-    date: "",
-    description:
-      "Led development of an AI-powered productivity super app that integrates calendar, tasks, email and more with 150+ features, using AI to analyze daily inputs 24/7 and optimize users' time management and focus across all aspects of work and life",
-    image:
-      "https://media.licdn.com/dms/image/v2/D4E0BAQEJUK2ZfC_xcg/company-logo_200_200/company-logo_200_200/0/1734020536727/iamwarpspeed_logo?e=1753920000&v=beta&t=spFWSTzCDUfNr8J4O8OYVTADISFZa9IQExCBLmgdQXk",
-      tags: [
-        "React Native",
-        "Redux",
-        "Node.js",
-        "AI Integration",
-        "Real-time Sync",
-        "Productivity Tools",
-        "Machine Learning",
-        "Data Analytics",
-        "Adaptive Scheduling",
-        "Cloud Infrastructure",
-      ],
-
-    github: "https://github.com/HimanshuSingour/Flight-Booking-Application-",
-
+    id: 0,
+    slug: "pocket-rehab",
+    featured: true,
+    title: "Pocket Rehab",
+    tagline: "24/7 support for people recovering from addiction and depression.",
+    domain: "Healthcare · Mental health",
+    platform: "iOS & Android",
+    scope: "React Native app, real-time chat, Firebase integration",
+    color: "#E5531A",
+    screen: "recovery",
+    problem:
+      "Recovery from drug or alcohol addiction and depression doesn't keep office hours. People need support the moment a craving or a dark thought hits, often anonymously, and often on low-end phones with patchy connectivity.",
+    metrics: [
+      { value: "140K+", label: "downloads" },
+      { value: "-40%", label: "failed progress syncs" },
+    ],
+    approach: [
+      { title: "Always-on support", body: "Real-time private chats, community discussions and connections with recovery companions, available 24/7." },
+      { title: "Anonymous by design", body: "Anonymous interactions so people can reach out for help without exposing who they are." },
+      { title: "Offline-first progress", body: "A Redux-based offline-first layer saves recovery progress on the device and syncs it resiliently, cutting failed syncs by 40%." },
+      { title: "Built for any phone", body: "Performance work for low-end Android devices, plus Firebase auth, push notifications and deep linking to support growth to 140K+ downloads." },
+    ],
+    outcome:
+      "Pocket Rehab grew to 140K+ downloads as a 24/7 support space for people in recovery, and failed progress syncs dropped by 40%.",
+    stack: ["React Native", "Redux", "Firebase", "Node.js", "MongoDB", "REST APIs"],
+    screenshots: [],
   },
   {
     id: 1,
-    title: "Pocket Rehab",
-    date: "Jun 2019 - Dec 2020",
-    description:
-      "Pocket Rehab is a globally recognized recovery assistance app with 140k+ downloads, offering 24/7 real-time support through a secure mobile platform. The app enables anonymous interactions, private chats, community discussions, and connections with recovery companions to enhance sustained recovery outcomes.",
-    image:
-      "https://media.licdn.com/dms/image/v2/C4E0BAQFI5-8lDcR8RA/company-logo_200_200/company-logo_200_200/0/1630608240192/pocketrehab_logo?e=1753920000&v=beta&t=7jrlJkWQdUfbjgXZ1P7XYBxtdStY2GBvlh36D9eE5c0",
-    tags: [
-      "iOS",
-      "Android",
-      "Node.js",
-      "React Native",
-      "MongoDB",
-      "REST APIs",
-      "Real-time Chat",
-      "Push Notifications",
-      "Authentication",
-      "Mobile Security"
+    slug: "warpspeed",
+    featured: true,
+    title: "WarpSpeed",
+    tagline: "An AI productivity app for email, calendar, tasks and chat.",
+    domain: "AI · Productivity",
+    platform: "Web, iOS & Android",
+    scope: "Architecture, Node.js services, Next.js web, React Native app",
+    color: "#5B5BD6",
+    screen: "inbox",
+    problem:
+      "People split their day across three inboxes, a calendar, a task app and a chat tool. WarpSpeed brings them into one place and uses AI to decide what matters.",
+    metrics: [
+      { value: "3", label: "email providers unified" },
+      { value: "1", label: "backend for web + mobile" },
     ],
-    category: "Mobile app",
-    github: "https://github.com/HimanshuSingour/Bank-Of-Bharat-BOB",
+    approach: [
+      { title: "One inbox, three providers", body: "Unified Apple Mail, Gmail and Outlook, with LLM-powered summaries via Perplexity for smart triage and suggested replies." },
+      { title: "Real-time chat", body: "Engineered 1:1 and group conversations over WebSockets on a modular Node.js backend." },
+      { title: "One backend, two clients", body: "Architected shared services behind both the Next.js web app and the React Native app, so features ship to every platform together." },
+      { title: "AI-driven scheduling", body: "Integrated calendar and task automation that helps users decide when to do what." },
+    ],
+    outcome:
+      "A single cross-platform product that replaces several tools, with new features shipping to web and mobile together from one backend.",
+    stack: ["Next.js", "React Native", "TypeScript", "Node.js", "WebSockets", "Perplexity AI"],
+    screenshots: ["/work/warpspeed-1.png", "/work/warpspeed-2.png", "/work/warpspeed-3.png", "/work/warpspeed-4.png"],
+    screenshotStyle: "store",
+    screenshotCredit: "Google Play listing",
+    playstore: "https://play.google.com/store/apps/details?id=com.iamwarpspeed.ai",
   },
   {
     id: 2,
-    title: "Binged",
-    date: "Jan 2024 - Apr 2024", 
-    description:
-      "A comprehensive OTT platform aggregator that helps users discover and locate content across 40+ streaming services, featuring a sophisticated rating system, content filters, streaming calendar, and multilingual reviews to solve the 'what to watch' and 'where to watch' dilemmas for Indian viewers.",
-    image:
-      "https://media.licdn.com/dms/image/v2/D560BAQEBn__SslH5MQ/company-logo_200_200/company-logo_200_200/0/1705247722665?e=1753920000&v=beta&t=s2KvdStv8c0tZcS_nXhWpMeLeduQoNuFJN1CKGX2yVw",
-    tags: [
-      "React Native",
-      "Angular",
-      "Node.js", 
-      "REST APIs",
-      "MongoDB",
-      "Express.js",
-      "Redux",
-      "Content Filtering",
-      "Multi-language Support",
-      "Rating System",
-      "Streaming Integration",
-      "User Authentication",
-      "Search & Discovery"
+    slug: "sociall",
+    featured: true,
+    title: "Sociall",
+    tagline: "All your social platforms in one hub, with an AI Reality Check.",
+    domain: "Social · AI",
+    platform: "Android",
+    scope: "React Native client architecture, AI feature, integrations",
+    color: "#D6409F",
+    screen: "feed",
+    problem:
+      "People juggle half a dozen social apps, and AI-generated content makes it hard to know what's real. Sociall brings the platforms into one curated, ad-free hub and lets users check any post in a tap.",
+    metrics: [
+      { value: "10K+", label: "Google Play downloads" },
+      { value: "4.2★", label: "rating from 554 reviews" },
     ],
-    category: "web app",
-    github: "https://github.com/rishavchanda/Podstream",
-    webapp: "https://podstream.netlify.app/",
-   
+    approach: [
+      { title: "Reality Check", body: "Built the AI-powered Reality Check feature: users tap any post, text or image to detect AI-generated content in real time." },
+      { title: "Lifecycle messaging", body: "Integrated the Customer.io SDK with custom in-app messaging and automatic light/dark theming." },
+      { title: "Modular client", body: "Architected the React Native app with clean separation between authentication, feed and messaging." },
+    ],
+    outcome:
+      "Sociall is live on Google Play with 10K+ downloads and a 4.2★ rating, and Reality Check gives users a one-tap way to tell what's real.",
+    stack: ["React Native", "Node.js", "Customer.io", "Liquid"],
+    screenshots: ["/work/sociall-1.jpg", "/work/sociall-2.jpg", "/work/sociall-3.png", "/work/sociall-4.png"],
+    screenshotStyle: "store",
+    screenshotCredit: "Google Play listing",
+    playstore: "https://play.google.com/store/apps/details?id=com.sociall.sociallapp",
   },
   {
     id: 3,
-    title: "Buckman",
-    date: "Apr 2023 - Jun 2023",
-    description:
-      "Buckman delivers innovative chemical solutions and expertise, combining advanced technology and data analytics to help industries improve productivity, profitability, safety and sustainability through their Chemistry, connected approach.",
-    image:
-      "https://media.licdn.com/dms/image/v2/C4E0BAQGfn7CYlxt93Q/company-logo_200_200/company-logo_200_200/0/1630585925864/buckman_logo?e=1753920000&v=beta&t=o5gTYC_SVcDfVoe8jvNbyQtPg5go3Ur2Lm44niMQtIY",
-    tags: [
-      "React Native",
-      "Node.js",
-      "MongoDB",
-      "Location Services",
-      "Restaurant Discovery",
-      "Online Ordering",
-      "User Authentication",
-      "Real-time Tracking",
-      "Payment Integration",
-      "Menu Management",
-      "Push Notifications",
-      "Mobile UI/UX",
-      "REST APIs"
+    slug: "ackumen",
+    featured: true,
+    title: "Ackumen",
+    tagline: "Buckman's platform app for industrial teams.",
+    domain: "Enterprise · B2B",
+    platform: "Android",
+    scope: "React Native app, GraphQL integration, CI/CD and monitoring",
+    color: "#12A594",
+    screen: "monitor",
+    problem:
+      "Buckman's Ackumen platform turns sensor data, chemistry and expert analysis into insights that industrial teams act on. The mobile app has to deliver that reliably, wherever the team is.",
+    metrics: [
+      { value: "4.8★", label: "Google Play rating" },
+      { value: "Automated", label: "releases + monitoring" },
     ],
-
-    github: "https://github.com/HimanshuSingour/UPI-Payment-Application",
-
-  }
+    approach: [
+      { title: "GraphQL data layer", body: "Built an Apollo Client integration for product discovery, supplier management and procurement workflows." },
+      { title: "Automated delivery", body: "Designed Bitrise CI/CD pipelines for repeatable, automated releases." },
+      { title: "Production visibility", body: "Integrated Datadog for error tracking, performance monitoring and alerting." },
+      { title: "Maintainable structure", body: "Organised the app with MVVM so it stays testable and easy to evolve." },
+    ],
+    outcome:
+      "A 4.8★-rated enterprise app, backed by automated releases and live production monitoring.",
+    stack: ["React Native", "Node.js", "GraphQL", "Apollo", "Bitrise", "Datadog"],
+    screenshots: ["/work/ackumen-4.png", "/work/ackumen-2.png", "/work/ackumen-3.png", "/work/ackumen-1.png"],
+    screenshotStyle: "raw",
+    screenshotCredit: "Google Play listing",
+    playstore: "https://play.google.com/store/apps/details?id=com.buckman.onsiteproteam",
+  },
+  {
+    id: 4,
+    slug: "pillar-wallet",
+    title: "Pillar Wallet",
+    tagline: "Multi-chain DeFi wallet for 10k+ users, with 30% faster transactions.",
+    domain: "Fintech",
+    platform: "iOS & Android",
+    scope: "Led mobile development",
+    color: "#3E63DD",
+    date: "2023",
+    problem: "A crypto wallet that spans multiple chains has to be both secure and fast.",
+    metrics: [
+      { value: "10k+", label: "users" },
+      { value: "30%", label: "faster transactions" },
+    ],
+    approach: [
+      { title: "Multi-chain wallet", body: "Led development of a crypto wallet supporting 10k+ users across multiple chains." },
+      { title: "Security and speed", body: "Implemented secure authentication and optimized transaction speed by 30%." },
+      { title: "Reliable delivery", body: "Shipped through Bitrise CI/CD on Azure cloud services." },
+    ],
+    stack: ["React Native", "TypeScript", "OAuth", "Firebase Auth", "Bitrise", "Azure"],
+  },
+  {
+    id: 5,
+    slug: "avr-base",
+    title: "AVR Base",
+    tagline: "Cyclist community with real-time chat: 35% more engagement.",
+    domain: "Social",
+    platform: "iOS & Android",
+    scope: "Real-time chat, backend optimization",
+    color: "#0090FF",
+    date: "2024",
+    problem: "A cycling community needs real-time conversation and fast data.",
+    metrics: [
+      { value: "+35%", label: "user engagement" },
+      { value: "45%", label: "faster data fetching" },
+    ],
+    approach: [
+      { title: "Real-time chat", body: "Developed real-time chat with React Native, Redux and WebSockets." },
+      { title: "Faster data", body: "Optimized the backend architecture for 45% faster data fetching and 35% higher engagement." },
+    ],
+    stack: ["React Native", "Redux", "Node.js", "Redis", "TanStack Query", "WebSockets"],
+  },
+  {
+    id: 6,
+    slug: "binged",
+    title: "Binged",
+    tagline: "Find what to watch across 40+ streaming services.",
+    domain: "Entertainment",
+    platform: "Mobile",
+    scope: "Mobile app development",
+    color: "#E5484D",
+    date: "2024",
+    problem: "Viewers in India juggle 40+ streaming services with no single place to decide what to watch, or where.",
+    metrics: [
+      { value: "40+", label: "services aggregated" },
+    ],
+    approach: [
+      { title: "Unified discovery", body: "Content discovery across 40+ streaming services for Indian viewers." },
+      { title: "Decision tools", body: "Rating system, content filters, streaming calendar and multilingual reviews." },
+    ],
+    stack: ["React Native", "Node.js", "Express.js", "MongoDB", "REST APIs"],
+  },
 ];
 
-export const education = []
+// Real quotes only, e.g. from LinkedIn recommendations. The section stays hidden while empty.
+// { quote: "...", name: "Full Name", title: "Engineering Manager, Company" }
+export const testimonials = [];
+
+export const brands = ["Commas", "Buckman", "Pocket Rehab", "WarpSpeed", "Sociall", "Pillar", "AVR Base", "Binged"];

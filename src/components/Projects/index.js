@@ -1,41 +1,36 @@
 import React from 'react'
-import { useState } from 'react'
-import { Container, Wrapper, Title, Desc, CardContainer} from './ProjectsStyle'
-import ProjectCard from '../Cards/ProjectCards'
+import { SubHeading } from './ProjectsStyle'
+import { Container, Wrapper, SectionHeader, Serif, Mono } from '../Section'
+import { CaseStudy, ProjectRow } from '../Cards/ProjectCards'
 import { projects } from '../../data/constants'
 
+const Projects = ({ onOpen: open }) => {
+  const featured = projects.filter((p) => p.featured)
+  const more = projects.filter((p) => !p.featured)
 
-const Projects = ({openModal,setOpenModal}) => {
-  const [toggle] = useState('all');
   return (
-    <Container id="projects">
+    <Container id="work">
       <Wrapper>
-        <Title>Projects</Title>
-        <Desc>
-          Explore my portfolio of innovative projects spanning mobile applications, web development, and cutting-edge technologies. Each project represents a unique challenge solved with creativity and technical excellence.
-        </Desc>
-     
-        <CardContainer className="stagger-animation">
-          {toggle === 'all' && projects
-            .map((project, index) => (
-              <ProjectCard 
-                key={project.id || index}
-                project={project} 
-                openModal={openModal} 
-                setOpenModal={setOpenModal}
-              />
-            ))}
-          {projects
-            .filter((item) => item.category === toggle)
-            .map((project, index) => (
-              <ProjectCard 
-                key={project.id || index}
-                project={project} 
-                openModal={openModal} 
-                setOpenModal={setOpenModal}
-              />
-            ))}
-        </CardContainer>
+        <SectionHeader
+          index="01"
+          label="Selected work"
+          title={<>Case studies from products <Serif>in production.</Serif></>}
+          desc="Each one started with a real user problem, and I owned the result: architecture, delivery and the numbers after launch."
+        />
+        <div>
+          {featured.map((project, i) => (
+            <CaseStudy key={project.id} project={project} index={i} reverse={i % 2 === 1} onOpen={() => open(project)} />
+          ))}
+        </div>
+        <SubHeading data-reveal>
+          <h3>Also shipped</h3>
+          <Mono>{more.length} projects</Mono>
+        </SubHeading>
+        <div data-reveal>
+          {more.map((project) => (
+            <ProjectRow key={project.id} project={project} onOpen={() => open(project)} />
+          ))}
+        </div>
       </Wrapper>
     </Container>
   )

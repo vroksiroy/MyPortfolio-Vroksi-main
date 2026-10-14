@@ -1,171 +1,171 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
-import { useRef } from 'react';
-import emailjs from '@emailjs/browser';
-import { Snackbar } from '@mui/material';
+import NorthEastIcon from '@mui/icons-material/NorthEast';
+import ContentCopyIcon from '@mui/icons-material/ContentCopy';
+import CheckIcon from '@mui/icons-material/Check';
+import { Container, Wrapper, Serif, Mono } from '../Section'
+import { Bio } from '../../data/constants'
 
-const Container = styled.div`
-display: flex;
-flex-direction: column;
-justify-content: center;
-position: relative;
-z-index: 1;
-align-items: center;
-@media (max-width: 960px) {
-    padding: 0px;
-}
-`
-
-const Wrapper = styled.div`
-position: relative;
-display: flex;
-justify-content: space-between;
-align-items: center;
-flex-direction: column;
-width: 100%;
-max-width: 1350px;
-padding: 0px 0px 80px 0px;
-gap: 12px;
-@media (max-width: 960px) {
-    flex-direction: column;
-}
-`
-
-const Title = styled.div`
-font-size: 42px;
-text-align: center;
-font-weight: 600;
-margin-top: 20px;
-  color: ${({ theme }) => theme.text_primary};
+const Panel = styled.div`
+  padding: 72px 64px 56px;
+  border-radius: 36px;
+  background: ${({ theme }) => theme.mode === 'light' ? theme.ink : theme.surface};
+  color: ${({ theme }) => theme.mode === 'light' ? theme.bg : theme.ink};
+  box-shadow: inset 0 0 0 1px ${({ theme }) => theme.line};
+  position: relative;
+  overflow: hidden;
+  &::before {
+    content: '';
+    position: absolute;
+    right: -180px;
+    top: -220px;
+    width: 560px;
+    height: 560px;
+    border-radius: 50%;
+    background: ${({ theme }) => theme.accent};
+    opacity: 0.22;
+    filter: blur(120px);
+    pointer-events: none;
+  }
   @media (max-width: 768px) {
-      margin-top: 12px;
-      font-size: 32px;
+    padding: 44px 24px 32px;
+    border-radius: 28px;
   }
-`;
+`
 
-const Desc = styled.div`
-    font-size: 18px;
-    text-align: center;
-    max-width: 600px;
-    color: ${({ theme }) => theme.text_secondary};
-    @media (max-width: 768px) {
-        margin-top: 12px;
-        font-size: 16px;
-    }
-`;
+const Label = styled(Mono)`
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: inherit;
+  opacity: 0.7;
+`
 
-
-const ContactForm = styled.form`
-  width: 95%;
-  max-width: 600px;
-  display: flex;
-  flex-direction: column;
-  background-color: ${({ theme }) => theme.card};
-  padding: 32px;
-  border-radius: 16px;
-  box-shadow: rgba(23, 92, 230, 0.15) 0px 4px 24px;
+const Title = styled.h2`
+  position: relative;
   margin-top: 28px;
-  gap: 12px;
+  max-width: 900px;
+  font-size: clamp(40px, 6.4vw, 88px);
+  line-height: 1;
+  letter-spacing: -0.045em;
 `
 
-const ContactTitle = styled.div`
-  font-size: 24px;
-  margin-bottom: 6px;
-  font-weight: 600;
-  color: ${({ theme }) => theme.text_primary};
+const EmailRow = styled.div`
+  position: relative;
+  margin-top: 48px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px 16px;
 `
 
-const ContactInput = styled.input`
-  flex: 1;
-  background-color: transparent;
-  border: 1px solid ${({ theme }) => theme.text_secondary};
-  outline: none;
-  font-size: 18px;
-  color: ${({ theme }) => theme.text_primary};
-  border-radius: 12px;
-  padding: 12px 16px;
-  &:focus {
-    border: 1px solid ${({ theme }) => theme.primary};
+const Email = styled.a`
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-size: clamp(28px, 4vw, 48px);
+  line-height: 1.1;
+  overflow-wrap: anywhere;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 8px;
+  text-decoration-color: ${({ theme }) => theme.accent};
+  &:hover {
+    color: ${({ theme }) => theme.accent};
   }
 `
 
-const ContactInputMessage = styled.textarea`
-  flex: 1;
-  background-color: transparent;
-  border: 1px solid ${({ theme }) => theme.text_secondary};
-  outline: none;
-  font-size: 18px;
-  color: ${({ theme }) => theme.text_primary};
-  border-radius: 12px;
-  padding: 12px 16px;
-  &:focus {
-    border: 1px solid ${({ theme }) => theme.primary};
+const CopyButton = styled.button`
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 38px;
+  padding: 0 14px;
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: 14px;
+  color: inherit;
+  background: transparent;
+  border: 1px solid currentColor;
+  opacity: 0.75;
+  transition: opacity 0.2s ease;
+  &:hover {
+    opacity: 1;
+  }
+  svg {
+    font-size: 16px;
   }
 `
 
-const ContactButton = styled.input`
-  width: 100%;
-  text-decoration: none;
-  text-align: center;
-  background: hsla(271, 100%, 50%, 1);
-  background: linear-gradient(225deg, hsla(271, 100%, 50%, 1) 0%, hsla(294, 100%, 50%, 1) 100%);
-  background: -moz-linear-gradient(225deg, hsla(271, 100%, 50%, 1) 0%, hsla(294, 100%, 50%, 1) 100%);
-  background: -webkit-linear-gradient(225deg, hsla(271, 100%, 50%, 1) 0%, hsla(294, 100%, 50%, 1) 100%);
-  padding: 13px 16px;
-  margin-top: 2px;
-  border-radius: 12px;
-  border: none;
-  color: ${({ theme }) => theme.text_primary};
-  font-size: 18px;
-  font-weight: 600;
+const Bottom = styled.div`
+  position: relative;
+  margin-top: 72px;
+  padding-top: 24px;
+  border-top: 1px solid ${({ theme }) => theme.mode === 'light' ? 'rgba(246,245,241,0.18)' : theme.line};
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+  @media (max-width: 768px) {
+    margin-top: 48px;
+  }
 `
 
+const Links = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 28px;
+`
 
+const LinkOut = styled.a`
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 16px;
+  opacity: 0.85;
+  &:hover {
+    opacity: 1;
+    color: ${({ theme }) => theme.accent};
+  }
+  svg {
+    font-size: 16px;
+  }
+`
+
+const Note = styled.div`
+  font-size: 15px;
+  opacity: 0.6;
+`
 
 const Contact = () => {
+  const [copied, setCopied] = useState(false);
 
-  //hooks
-  const [open, setOpen] = React.useState(false);
-  const form = useRef();
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    emailjs.sendForm(
-      process.env.REACT_APP_EMAILJS_SERVICE_ID,
-      process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
-      form.current,
-      process.env.REACT_APP_EMAILJS_PUBLIC_KEY
-    )
-      .then((result) => {
-        setOpen(true);
-        form.current.reset();
-      }, (error) => {
-        console.log(error.text);
-      });
+  const copy = () => {
+    navigator.clipboard?.writeText(Bio.email).then(() => {
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    }).catch(() => {});
   }
 
-
-
   return (
-    <Container>
+    <Container id="contact">
       <Wrapper>
-        <Title>Contact</Title>
-        <Desc>Feel free to reach out to me for any questions or opportunities!</Desc>
-        <ContactForm ref={form} onSubmit={handleSubmit}>
-          <ContactTitle>Email Me 🚀</ContactTitle>
-          <ContactInput placeholder="Your Email" name="from_email" />
-          <ContactInput placeholder="Your Name" name="from_name" />
-          <ContactInput placeholder="Subject" name="subject" />
-          <ContactInputMessage placeholder="Message" rows="4" name="message" />
-          <ContactButton type="submit" value="Send" />
-        </ContactForm>
-        <Snackbar
-          open={open}
-          autoHideDuration={6000}
-          onClose={()=>setOpen(false)}
-          message="Email sent successfully!"
-          severity="success"
-        />
+        <Panel data-reveal>
+          <Label>(05) Contact</Label>
+          <Title>Building something people will rely on? <Serif>Let's talk.</Serif></Title>
+          <EmailRow>
+            <Email href={`mailto:${Bio.email}`}>{Bio.email}</Email>
+            <CopyButton onClick={copy} aria-live="polite">
+              {copied ? <><CheckIcon /> Copied</> : <><ContentCopyIcon /> Copy</>}
+            </CopyButton>
+          </EmailRow>
+          <Bottom>
+            <Links>
+              <LinkOut href={Bio.linkedin} target="_blank" rel="noreferrer">LinkedIn <NorthEastIcon /></LinkOut>
+              <LinkOut href={Bio.github} target="_blank" rel="noreferrer">GitHub <NorthEastIcon /></LinkOut>
+              <LinkOut href={Bio.resume} target="_blank" rel="noreferrer">Résumé <NorthEastIcon /></LinkOut>
+            </Links>
+            <Note>Based in {Bio.location} (IST)</Note>
+          </Bottom>
+        </Panel>
       </Wrapper>
     </Container>
   )

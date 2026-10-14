@@ -1,217 +1,142 @@
-import { Link as LinkR } from 'react-router-dom';
 import styled from 'styled-components';
 
-export const Nav = styled.div`
-    background-color: ${({theme}) => theme.card_light};
-    height: 80px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1rem;
-    position: sticky;
-    top: 0;
-    z-index: 10;
-    @media (max-width: 960px) {
-        trastion: 0.8s all ease;
-    }
-`;
-export const NavbarContainer = styled.div`
+export const Nav = styled.nav`
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  height: 64px;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  height: 60px;
-  z-index: 1;
-  width: 100%;
-  padding: 0 24px;
-  max-width: 1200px;
-`;
-
-export const NavLogo = styled(LinkR)`
-    width: 80%;    
-    padding: 0 6px;
-    display: flex;
-    justify-content: start;
-    align-items: center;
-    text-decoration: none;
-    @media (max-width: 640px) {
-      padding: 0 0px;
+  padding: 0 32px;
+  background: ${({ theme }) => theme.nav_bg};
+  backdrop-filter: saturate(180%) blur(16px);
+  -webkit-backdrop-filter: saturate(180%) blur(16px);
+  border-bottom: 1px solid ${({ scrolled, theme }) => scrolled ? theme.line : 'transparent'};
+  transition: border-color 0.2s ease;
+  @media (max-width: 768px) {
+    padding: 0 20px;
   }
-`;
-export const Span = styled.div`
-    padding: 0 4px;
-    font-weight: bold;
-    font-size: 18px;
-`;
+`
+
+export const NavInner = styled.div`
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+`
+
+export const Logo = styled.a`
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-size: 24px;
+  letter-spacing: -0.01em;
+  color: ${({ theme }) => theme.ink};
+  span {
+    color: ${({ theme }) => theme.accent};
+  }
+`
+
 export const NavItems = styled.ul`
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content:center;
-    gap: 32px;
-    padding: 0 6px;
-    list-style: none;
-
-    @media screen and (max-width: 768px) {
-      display: none;
-    }
-`;
-
-export const NavLink = styled.a`
-    color: ${({ theme }) => theme.text_primary};
-    font-weight: 500;
-    cursor: pointer;
-    transition: all 0.2s ease-in-out;
-    text-decoration: none;
-    :hover {
-      color: ${({ theme }) => theme.primary};
-    }
-
-    &.active {
-      border-bottom: 2px solid ${({ theme }) => theme.primary};
-    }
-`;
-
-
-export const GitHubButton = styled.a`
-  border: 1.8px solid ${({ theme }) => theme.primary};
-  justify-content: center;
   display: flex;
   align-items: center;
-  height: 70%;
-  border-radius: 20px;
-  color: ${({ theme }) => theme.primary};
-  cursor: pointer;
-  padding: 0 20px;
-  font-weight: 500;
-  text-decoration: none;
-  font-size: 16px;
-  transition: all 0.6s ease-in-out;
-    :hover {
-      background: ${({ theme }) => theme.primary};
-      color: ${({ theme }) => theme.white};     
-    }
-    @media screen and (max-width: 768px) { 
-    font-size: 14px;
-    }
-`;
-
-export const ButtonContainer = styled.div`
-  width: 80%;  
-  height: 100%;
-  display: flex;
-  justify-content: end;
-  align-items: center;
-  padding: 0 6px;
-  @media screen and (max-width: 768px) {
+  gap: 2px;
+  list-style: none;
+  @media (max-width: 900px) {
     display: none;
   }
-`;
+`
 
+export const NavLink = styled.a`
+  display: block;
+  padding: 8px 14px;
+  border-radius: 999px;
+  font-size: 14.5px;
+  color: ${({ theme }) => theme.ink_2};
+  transition: color 0.2s ease;
+  &:hover {
+    color: ${({ theme }) => theme.ink};
+  }
+`
 
-export const MobileIcon = styled.div`
+export const Actions = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 6px;
+`
+
+export const IconButton = styled.button`
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  color: ${({ theme }) => theme.ink_2};
+  transition: color 0.2s ease, background 0.2s ease;
+  &:hover {
+    color: ${({ theme }) => theme.ink};
+    background: ${({ theme }) => theme.surface_2};
+  }
+  svg {
+    font-size: 19px;
+  }
+`
+
+export const MenuButton = styled(IconButton)`
   display: none;
-  @media screen and (max-width: 768px) {
-    display: block;
-    position: absolute;
-    top: 0;
-    right: 0;
-    transform: translate(-100%, 60%);
-    font-size: 1.5rem;
-    cursor: pointer;
-    color: ${({ theme }) => theme.text_primary};
+  @media (max-width: 900px) {
+    display: inline-flex;
+  }
+`
+
+export const TextLink = styled(NavLink)`
+  @media (max-width: 560px) {
+    display: none;
+  }
+`
+
+export const CtaButton = styled.a`
+  display: inline-flex;
+  align-items: center;
+  height: 40px;
+  padding: 0 18px;
+  margin-left: 4px;
+  border-radius: 999px;
+  font-size: 14.5px;
+  font-weight: 500;
+  background: ${({ theme }) => theme.ink};
+  color: ${({ theme }) => theme.bg};
+  transition: background 0.2s ease, color 0.2s ease;
+  &:hover {
+    background: ${({ theme }) => theme.accent};
+    color: ${({ theme }) => theme.on_accent};
+  }
+  @media (max-width: 400px) {
+    padding: 0 14px;
   }
 `
 
 export const MobileMenu = styled.div`
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 16px;
-    position: absolute;
-    top: 80px;
-    right: 0;
-    width: 100%;
-    padding: 12px 40px 24px 40px;
-    background: ${({ theme }) => theme.card_light+99};
-    transition: all 0.6s ease-in-out;
-    transform: ${({ isOpen }) => (isOpen ? 'translateY(0)' : 'translateY(-100%)')};
-    border-radius: 0 0 20px 20px;
-    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
-    opacity: ${({ isOpen }) => (isOpen ? '100%' : '0')};
-    z-index: ${({ isOpen }) => (isOpen ? '1000' : '-1000')};
-
-`
-
-export const MobileMenuItems = styled.ul`
+  position: absolute;
+  top: 64px;
+  left: 0;
+  right: 0;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 32px;
-  list-style: none;
-  width: 100%;
-  height: 100%;
+  padding: 8px 20px 24px;
+  background: ${({ theme }) => theme.bg};
+  border-bottom: 1px solid ${({ theme }) => theme.line};
+  ${NavLink} {
+    padding: 16px 0;
+    font-size: 22px;
+    font-family: 'Instrument Serif', Georgia, serif;
+    color: ${({ theme }) => theme.ink};
+    border-bottom: 1px solid ${({ theme }) => theme.line};
+    border-radius: 0;
+  }
 `
-
-export const MobileMenuLink = styled(LinkR)`
-  color: ${({ theme }) => theme.text_primary};
-  font-weight: 500;
-  cursor: pointer;
-  transition: all 0.2s ease-in-out;
-  text-decoration: none;
-  :hover {
-    color: ${({ theme }) => theme.primary};
-  }
-
-  &.active {
-    border-bottom: 2px solid ${({ theme }) => theme.primary};
-  }
-`;
-
-export const MobileMenuButton = styled.a`
-  border: 1.8px solid ${({ theme }) => theme.primary};
-  justify-content: center;
-  display: flex;
-  align-items: center;
-  height: 70%;
-  border-radius: 20px;
-  color: ${({ theme }) => theme.primary};
-  cursor: pointer;
-  padding: 0 20px;
-  font-weight: 500;
-  text-decoration: none;
-  font-size: 16px;
-  transition: all 0.6s ease-in-out;
-
-  :hover {
-    background: ${({ theme }) => theme.primary};
-    color: ${({ theme }) => theme.white};
-  }
-`;
-
-export  const MobileLink = styled.a`
-  color: ${({ theme }) => theme.text_primary};
-  font-weight: 500;
-  cursor: pointer;
-  transition: all 0.2s ease-in-out;
-  text-decoration: none;
-  :hover {
-    color: ${({ theme }) => theme.primary};
-  }
-
-  &.active {
-    border-bottom: 2px solid ${({ theme }) => theme.primary};
-  }
-`;
-
-export const MobileNavLogo = styled(LinkR)`
-  width: 80%;
-  padding: 0 6px;
-  display: flex;
-  justify-content: start;
-  align-items: center;
-  text-decoration: none;
-  @media (max-width: 640px) {
-    padding: 0 0px;
-  }
-`;
